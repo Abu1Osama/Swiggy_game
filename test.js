@@ -49,5 +49,13 @@ test('createPlayer function', () => {
     jest.restoreAllMocks();
   });
   
+  test('playGame method with custom initial health values', () => {
+    const playerA = createPlayer(75, 8, 12);
+    const playerB = createPlayer(90, 7, 15);
   
+    const arena = GameArena(playerA, playerB);
+    arena.playGame();
+  
+    expect(playerA.health <= 0 || playerB.health <= 0).toBeTruthy();
+  });
  
