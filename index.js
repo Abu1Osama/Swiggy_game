@@ -57,11 +57,11 @@ let createPlayer = (health, strength, attack) => ({
   });
 
 
-  let player1 = createPlayer(100, 10, 5);
-  let player2 = createPlayer(100, 8, 6);
-  const arena = GameArena(player1, player2);
+  const playerA = createPlayer(50, 5, 10);
+  const playerB = createPlayer(100, 10, 5);
+
+  const arena = GameArena(playerA, playerB);
   arena.playGame();
 
 
-let damage = player1.attackOpponent(player2, 0, 4);
-console.log(`Player 2 took ${damage} damage. Player 2 health: ${player2.health}`);
+  module.exports = { createPlayer, GameArena };
